@@ -38,10 +38,20 @@ const app = new Vue({
       });
     },
 
-  }
-})
+    searchCharacters(series) {
+      fetch(`http://gateway.marvel.com/v1/public/series/${series.id}/characters?apikey=${apiKey}`)
+        .then((r) => r.json())
+        .then((data) => {
+          this.characters = data.data.results;
+        });
+    },
 
-      }
-    ]
-  }
-}
+    searchComics(series) {
+      fetch(`http://gateway.marvel.com/v1/public/series/${series.id}/comics?apikey=${apiKey}`)
+        .then((r) => r.json())
+        .then((r) => {
+          this.comics = data.data.results;
+        });
+    },
+  },
+});
