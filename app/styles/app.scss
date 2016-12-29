@@ -9,3 +9,11 @@ $c-nav-bar: rgba(43, 62, 79, 1.0);
 @import 'reset';
 @import 'nav-bar';
 @import 'body-content';
+
+.full-page {
+  position: relative;
+}
+
+.read-more--details {
+  position: absolute;
+}
