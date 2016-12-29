@@ -1,0 +1,20 @@
+.nav-bar {
+  background: $c-nav-bar;
+  color: #fff;
+  padding: 1rem;
+
+  &__container {
+    max-width: 60rem;
+    margin: 0 auto;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+}
+
+.title {
+  font-size: 1.6rem;
+}
