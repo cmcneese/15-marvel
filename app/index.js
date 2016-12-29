@@ -14,6 +14,31 @@ const app = new Vue({
       searchTerm: '',
     };
   },
+
+  mounted() {
+    this.searchSeries('Hulk');
+  },
+
+  methods: {
+    showDescription(description) {
+      this.modalDescription = description;
+    },
+
+    hideModal() {
+      this.modalDescription = null;
+    },
+
+    searchSeries(input) {
+      fetch(`http://gateway.marvel.com/v1/public/series?limit=1&titleStartsWith=${input}&apikey=${apiKey}`)
+      .then((r) => r.json())
+      .then((data) => {
+        this.series = data.data.results[0];
+        this.searchCharacters(this.series);
+        this.searchComics(this.series);
+      });
+    },
+
+  }
 })
 
       }
