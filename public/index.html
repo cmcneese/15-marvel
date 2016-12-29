@@ -2,10 +2,68 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>15-marvel</title>
+  <title>Marvel</title>
+  <link href="https://fonts.googleapis.com/css?family=Bangers|Open+Sans" rel="stylesheet">
   <link rel="stylesheet" href="/app.css">
 </head>
 <body>
+  <div class="full-page">
+
+    <div class="model" v-if="modalDescription">
+    <div class="modal__card">
+      <button class="modal__btn" v-on:click="hideModal" type="submit"><i class="fa fa-times" aria-hidden="true"></i></button>
+      <p v-html='modalDescription'></p>
+    </div>
+    </div>
+
+    <section class="nav-bar">
+      <div class="nav-bar__container">
+        <div class="nav-bar__content">
+          <h1 class="title">Marvel</h1>
+          <form class="nav__search" v-on:submit.prevent="searchSeries(searchTerm)">
+          <input type="text" placeholder="Search" class="nav__input" v-model="searchTerm">
+          </form>
+
+        </div>
+      </div>
+    </section>
+    <section class="body">
+      <div class="body-container">
+        <div class="body-content__left">
+          <div class="body-content__left--img">
+            <img v-bind:src="series.thumbnail.path + '.' + series.thumbnail.extension" alt="" class="body-content__left--image">
+          </div>
+          <h3 class="body-content__left--title">{{ series.title }}</h3>
+          <h5 class="body-content__left--year">{{ series.startYear }} - {{ series.endYear }}</h5>
+          <h4 class="body-content__left--creator">Creator</h4>
+          <p v-for="person in series.creators.items">{{ series.name }}</p>
+        </div>
+        <div class="body-content__right">
+          <h2 class="body-content__right--title">Characters</h2>
+          <div class="grid">
+            <div class="grid-item" v-for="character in characters">
+              <div class="grid-item__img">
+                <img v-bind:src="character.thumbnail.path + '.' + character.thumbnail.extension" alt="" class="grid-item__image--src">
+              </div>
+              <p>{{ character.name }}</p>
+            </div>
+          </div>
+          <h2 class="body-content__right--title">Comic</h2>
+          <div class="grid">
+            <div class="grid-item" v-for-"character in comics">
+            <div class="grid-item__img">
+              <img v-bind:src="character.thumbnail.path + '.' + character.thumbnail.extension" alt="" class="image">
+            </div>
+              <p>{{ character.title }}</p>
+
+              <button v-on:click="showDescription" class="read-more">Read More</button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
   <script src="/app.js" charset="utf-8"></script>
 </body>
 </html>

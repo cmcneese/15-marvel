@@ -1,6 +1,19 @@
+$c-nav-bar: rgba(43, 62, 79, 1.0);
+
 // @import 'yoga-sass/assets/yoga';
 // @import 'normalize-css/normalize';
 
 // $fa-font-path: '//netdna.bootstrapcdn.com/font-awesome/4.3.0/fonts';
 @import 'font-awesome/scss/font-awesome';
 @import 'box-sizing';
+@import 'reset';
+@import 'nav-bar';
+@import 'body-content';
+
+.full-page {
+  position: relative;
+}
+
+.read-more--details {
+  position: absolute;
+}
