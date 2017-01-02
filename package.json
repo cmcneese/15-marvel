@@ -1,5 +1,5 @@
 {
-  "name": "15-marvel",
+  "name": "marvel-15",
   "version": "1.0.0",
   "description": "",
   "main": "public/index.html",
@@ -15,7 +15,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "broccoli": "^1.1.0",
     "font-awesome": "^4.6.3",
     "normalize-css": "^2.3.1",
     "whatwg-fetch": "^1.0.0",
