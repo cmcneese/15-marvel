@@ -40,7 +40,7 @@ const babelScript = new Babel(appNoSass);
 const appScript = browserify(babelScript, {
   browserify: {
     entries: ['./index'],
-    debug: true
+    debug: true,
   },
   outputFile: 'app.js',
 
@@ -60,7 +60,7 @@ if (process.env.EMBER_ENV === 'test') {
   const testJs = browserify(testTree, {
     browserify: {
       entries: ['./tests/index-test'],
-      debug: true
+      debug: true,
     },
     outputFile: 'tests.js',
 
