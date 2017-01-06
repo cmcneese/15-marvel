@@ -1,6 +1,6 @@
 import 'whatwg-fetch';
-const apiKey = '5e2916234effe6286328f704c9ad7f40';
 import Vue from 'vue/dist/vue';
+const apiKey = '5e2916234effe6286328f704c9ad7f40';
 
 const app = new Vue({
   el: '.full-page',
@@ -29,7 +29,7 @@ const app = new Vue({
     },
 
     searchSeries(input) {
-      fetch(`http://gateway.marvel.com/v1/public/series?limit=1&titleStartsWith=${input}&apikey=${apiKey}`)
+      fetch(`http://gateway.marvel.com/v1/public/series?limit=1&titleStartsWith=${input}&apikey=5e2916234effe6286328f704c9ad7f40`)
       .then((r) => r.json())
       .then((data) => {
         this.series = data.data.results[0];
@@ -39,7 +39,7 @@ const app = new Vue({
     },
 
     searchCharacters(series) {
-      fetch(`http://gateway.marvel.com/v1/public/series/${series.id}/characters?apikey=${apiKey}`)
+      fetch(`http://gateway.marvel.com/v1/public/series/${series.id}/characters?apikey=$5e2916234effe6286328f704c9ad7f40`)
         .then((r) => r.json())
         .then((data) => {
           this.characters = data.data.results;
@@ -47,7 +47,7 @@ const app = new Vue({
     },
 
     searchComics(series) {
-      fetch(`http://gateway.marvel.com/v1/public/series/${series.id}/comics?apikey=${apiKey}`)
+      fetch(`http://gateway.marvel.com/v1/public/series/${series.id}/comics?apikey=$5e2916234effe6286328f704c9ad7f40`)
         .then((r) => r.json())
         .then((r) => {
           this.comics = data.data.results;
