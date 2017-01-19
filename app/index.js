@@ -9,7 +9,7 @@ const app = new Vue({
     return {
       series: null,
       characters: null,
-      comics: [],
+      comics: null,
       modalDescription: false,
       searchTerm: '',
     };
@@ -28,18 +28,18 @@ const app = new Vue({
       this.modalDescription = null;
     },
 
-    searchSeries(input) {
-      fetch(`http://gateway.marvel.com/v1/public/series?limit=1&titleStartsWith=${input}&apikey=5e2916234effe6286328f704c9ad7f40`)
+    searchSeries(series) {
+      fetch(`http://gateway.marvel.com/v1/public/series?limit=1&titleStartsWith=${series}&apikey={apiKey}`)
       .then((r) => r.json())
       .then((data) => {
-        this.series = data.data.results[0];
-        this.searchCharacters(this.series);
-        this.searchComics(this.series);
+        this.seriesData = data.data.results[0];
+        this.searchCharacters(this.seriesData.id);
+        this.searchComics(this.seriesData.id);
       });
     },
 
-    searchCharacters(series) {
-      fetch(`http://gateway.marvel.com/v1/public/series/${series.id}/characters?apikey=$5e2916234effe6286328f704c9ad7f40`)
+    searchCharacters(seriesId) {
+      fetch(`http://gateway.marvel.com/v1/public/series/${seriesId}/characters?apikey={apiKey}`)
         .then((r) => r.json())
         .then((data) => {
           this.characters = data.data.results;
@@ -47,7 +47,7 @@ const app = new Vue({
     },
 
     searchComics(series) {
-      fetch(`http://gateway.marvel.com/v1/public/series/${series.id}/comics?apikey=$5e2916234effe6286328f704c9ad7f40`)
+      fetch(`http://gateway.marvel.com/v1/public/series/${series}/comics?apikey={apiKey}`)
         .then((r) => r.json())
         .then((r) => {
           this.comics = data.data.results;

@@ -1,116 +1,37 @@
-* {
-  box-sizing: border-box;
+body {
+  margin: 0;
+  font-family: 'Permanent Marker', cursive;
 }
 
 img {
   max-width: 100%;
-  height: auto;
+}
+
+ul {
+  padding-left: 0;
+}
+
+li {
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+h3 {
+  padding-bottom: 0.5rem;
+  border-bottom: 0.1rem solid $c-border;
+  color: $c-primary;
+  font-size: 1.5rem;
+  line-height: 1em;
 }
 
 p {
-  font-size: 0.8rem;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: 'Bangers', cursive;
-}
-
-// Simple Spacing
-body,
-figure,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-html,
-iframe,
-li,
-ol,
-p,
-textarea,
-ul {
-  margin: 0;
-  padding: 0;
-}
-
-
-// Simple Lists
-ul {
-  list-style: none;
-  text-decoration: none;
-}
-
-// Simple Headers
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-size: 100%;
-  font-weight: normal;
-  font-family: 'Open Sans', sans-serif;
-  @import url(https://fonts.googleapis.com/css?family=Open+Sans);
-}
-
-// Simple Button
-button {
-  border: 0;
-  outline: none;
-}
-
-// Simple Input
-input {
-  border: 0;
-  outline: none;
-}
-
-// Simple Utilities
-.left {
-  text-align: left;
-}
-
-.right {
-  text-align: right;
-}
-
-.center {
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.hidden {
-  display: none;
-}
-
-
-// Simple Container
-$breakpoint-small: 30em; // 480px
-$breakpoint-medium: 45em; // 720px
-$breakpoint-large: 60em; // 960px
-
-.container {
-  margin-left: auto;
-  margin-right: auto;
-
-  @media only screen and (min-width: $breakpoint-small) {
-    width: 100%;
-    max-width: 30em;
-  }
-  @media only screen and (min-width: $breakpoint-medium) {
-    width: 100%;
-    max-width: 45em;
-  }
-  @media only screen and (min-width: $breakpoint-large) {
-    width: 100%;
-    max-width: 60em;
-  }
+  color: $c-primary;
 }

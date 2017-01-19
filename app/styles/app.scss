@@ -1,19 +1,15 @@
-$c-nav-bar: rgba(43, 62, 79, 1);
 // @import 'yoga-sass/assets/yoga';
 // @import 'normalize-css/normalize';
 
-// $fa-font-path: '//netdna.bootstrapcdn.com/font-awesome/4.3.0/fonts';
-@import 'scss/font-awesome';
+$fa-font-path: '//netdna.bootstrapcdn.com/font-awesome/4.3.0/fonts';
+$c-primary: #2e3e4e;
+$c-white: #dedede;
+$c-border: desaturate($c-primary, 5%);
+@import 'font-awesome/scss/font-awesome';
 @import 'box-sizing';
 @import 'reset';
-@import 'nav-bar';
-@import 'body-content';
-
-
-.full-page {
-  position: relative;
-}
-
-.read-more--details {
-  position: absolute;
-}
+@import 'series';
+@import 'characters';
+@import 'comics';
+@import 'modal';
+@import 'layout';
