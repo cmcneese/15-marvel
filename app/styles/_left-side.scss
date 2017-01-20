@@ -1,0 +1,29 @@
+.comic_photo {
+  height: 15rem;
+  width: 15rem;
+  border-radius: 0.4rem;
+  box-shadow: 0.2rem 0.2rem 0.4rem rgba(0, 0, 0, 0.4);
+  // flex-direction: r;
+  // flex-grow: 1;
+
+}
+
+.featured_photo {
+  &--caption {
+    &--subcaption {
+      }
+  }
+}
+
+.creator {
+  &_title {
+    font-family: 'Bangers';
+    border-bottom: .1rem solid black;
+    font-size: 2rem;
+
+    &_list {
+      &_list-name {
+        }
+    }
+  }
+}

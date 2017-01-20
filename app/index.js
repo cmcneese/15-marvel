@@ -7,7 +7,7 @@ const app = new Vue({
 
   data() {
     return {
-      series: null,
+      seriesData: null,
       characters: null,
       comics: null,
       modalDescription: false,
@@ -38,16 +38,16 @@ const app = new Vue({
       });
     },
 
-    searchCharacters(seriesId) {
-      fetch(`http://gateway.marvel.com/v1/public/series/${seriesId}/characters?apikey={apiKey}`)
+    searchCharacters(id) {
+      fetch(`http://gateway.marvel.com/v1/public/series/${id}/characters?apikey={apiKey}`)
         .then((r) => r.json())
         .then((data) => {
           this.characters = data.data.results;
         });
     },
 
-    searchComics(series) {
-      fetch(`http://gateway.marvel.com/v1/public/series/${series}/comics?apikey={apiKey}`)
+    searchComics(seriesComics) {
+      fetch(`http://gateway.marvel.com/v1/public/series/${seriesComics}/comics?apikey={apiKey}`)
         .then((r) => r.json())
         .then((r) => {
           this.comics = data.data.results;

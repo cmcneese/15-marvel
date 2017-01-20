@@ -1,0 +1,45 @@
+.nav-bar {
+  width: 100%;
+  background: $c-primary;
+  box-shadow: 0.2rem 0.2rem 0.4rem rgba(0, 0, 0, 0.4);
+  padding: 0 1rem;
+
+  &__flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.marvel_logo-image {
+  width: 7rem;
+  height: 2rem;
+}
+
+.search_bar {
+  margin: 1rem 0;
+  display: flex;
+  flex-direction: row;
+
+  &-input {
+    width: 100%;
+    background-color: $c-secondary;
+    box-shadow: $c-primary 0 0 0 0 inset;
+    color: $c-font-color;
+    border-top: .1rem solid $c-primary;
+    border-bottom: .1rem solid $c-primary;
+    border-right: none;
+    border-left: none;
+    font-size: .6em;
+    padding-left: .5rem;
+  }
+}
+
+.fa-search {
+  color: $c-primary;
+  background-color: $c-secondary;
+  border-top: .1rem solid $c-primary;
+  border-bottom: .1rem solid $c-primary;
+  padding: .3rem;
+
+}

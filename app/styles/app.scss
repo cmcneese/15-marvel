@@ -1,15 +1,22 @@
+$c-primary: rgba(44, 62, 78, 1.0);
+$c-font-color: rgba(59, 59, 59, 1.0);
+$c-secondary: #dad8de;
+
+$m-gutter: 0.5rem;
+
 // @import 'yoga-sass/assets/yoga';
 // @import 'normalize-css/normalize';
 
 $fa-font-path: '//netdna.bootstrapcdn.com/font-awesome/4.3.0/fonts';
-$c-primary: #2e3e4e;
-$c-white: #dedede;
-$c-border: desaturate($c-primary, 5%);
-@import 'font-awesome/scss/font-awesome';
+// @import 'font-awesome/scss/font-awesome';
 @import 'box-sizing';
+@import 'navbar';
+@import 'left-side';
+@import 'right-side';
 @import 'reset';
-@import 'series';
-@import 'characters';
-@import 'comics';
 @import 'modal';
-@import 'layout';
+
+.container {
+  max-width: 60rem;
+  margin: 0 auto;
+}
