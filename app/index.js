@@ -29,7 +29,7 @@ const app = new Vue({
     },
 
     searchSeries(series) {
-      fetch(`http://gateway.marvel.com/v1/public/series?limit=1&titleStartsWith=${series}&apikey={apiKey}`)
+      fetch(`http://gateway.marvel.com/v1/public/series?limit=1&titleStartsWith=${series}&apikey=${apiKey}`)
       .then((r) => r.json())
       .then((data) => {
         this.seriesData = data.data.results[0];
@@ -39,7 +39,7 @@ const app = new Vue({
     },
 
     searchCharacters(id) {
-      fetch(`http://gateway.marvel.com/v1/public/series/${id}/characters?apikey={apiKey}`)
+      fetch(`http://gateway.marvel.com/v1/public/series/${id}/characters?apikey=${apiKey}`)
         .then((r) => r.json())
         .then((data) => {
           this.characters = data.data.results;
@@ -47,9 +47,9 @@ const app = new Vue({
     },
 
     searchComics(seriesComics) {
-      fetch(`http://gateway.marvel.com/v1/public/series/${seriesComics}/comics?apikey={apiKey}`)
+      fetch(`http://gateway.marvel.com/v1/public/series/${seriesComics}/comics?apikey=${apiKey}`)
         .then((r) => r.json())
-        .then((r) => {
+        .then((data) => {
           this.comics = data.data.results;
         });
     },
