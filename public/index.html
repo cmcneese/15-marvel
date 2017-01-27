@@ -16,8 +16,7 @@
          <div class="modal__card">
            <button class="modal_btn" v-on:click="hideModal"> <i class="fa fa-times" aria-hidden="true"> </i> </button>
            <p v-html="modalDescription"></p>
-
-         </div>
+        </div>
        </div>
 
     <div class="nav-bar">
@@ -25,7 +24,7 @@
         <div class="nav-bar__flex">
           <div class="marvel_logo"> <img src="http://img15.deviantart.net/85b0/i/2014/257/c/0/marvel_logo_by_jmk_prime-d7z0vj3.png" class="marvel_logo-image" alt="marvel logo"> </div>
           <form class="search_bar" v-on:submit.prevent="searchSeries(searchTerm)">
-            <input type="text" class="search_bar__input" placeholder="Search" v-model="searchTerm"> <i class="fa fa-search" aria-hidden="true"> </i>
+            <input type="text" class="search_bar_input" placeholder="Search" v-model="searchTerm">
           </form>
         </div>
       </div>
@@ -35,16 +34,16 @@
       <div class="container">
         <div class="grid">
 
-          <div class="grid__item grid__item--left">
+          <div class="grid__item grid__item--left" v-if="seriesData">
             <div class="section_left--content">
               <div class="featured_photo">
-                <img v-bind:src="seriesData.thumbnail.path + '.' + seriesData.thumbnail.extension" v-bind:alt="seriesData.title" class="comic_photo">
+                <img v-bind:src="seriesData.thumbnail.path + '.' + seriesData.thumbnail.extension" class="comic_photo">
                 <figcaption class="featured_photo--caption">{{ seriesData.title }}</figcaption>
                 <h6 class="featured_photo--subcaption">{{ seriesData.startYear }} - {{ seriesData.endYear }}</h6>
               </div>
 
               <div class="creator">
-                <h4 class="creator_title">Creator </h4>
+                <h4 class="creator_title">Creators </h4>
                 <ul class="creator_list">
                   <li class="creator_list-name" v-for="creator in seriesData.creators.items">{{ creator.name }}</li>
 
@@ -79,7 +78,7 @@
                   <div class="grid__item" v-for="comic in comics">
                     <div class="comic_collection-card">
                       <!-- <div class="square"> -->
-                      <img v-bind:src="comic.thumbnail.path + '.' + comic.thumbnail.extension" class="comic_collection-images" v-bind:alt="comic.name">
+                      <img v-bind:src="comic.thumbnail.path + '.' + comic.thumbnail.extension" class="comic_collection-images" v-bind:alt="comic.name" v-if="seriesData">
                       <figcaption class="comic_collection-number">{{ comic.title }}</figcaption>
 
                       <button class="comic_collection-button" v-on:click="showDescription(comic.description)"> Read More </button>

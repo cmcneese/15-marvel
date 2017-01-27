@@ -18,6 +18,7 @@
     "broccoli": "^1.1.0",
     "font-awesome": "^4.6.3",
     "normalize-css": "^2.3.1",
+    "vue": "^2.1.10",
     "whatwg-fetch": "^1.0.0",
     "yoga-sass": "^1.0.1"
   },
