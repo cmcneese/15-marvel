@@ -8,12 +8,12 @@ $m-gutter: 0.5rem;
 // @import 'normalize-css/normalize';
 
 $fa-font-path: '//netdna.bootstrapcdn.com/font-awesome/4.3.0/fonts';
-// @import 'font-awesome/scss/font-awesome';
+@import 'scss/font-awesome';
+@import 'reset';
 @import 'box-sizing';
 @import 'navbar';
 @import 'left-side';
 @import 'right-side';
-@import 'reset';
 @import 'modal';
 
 .container {
