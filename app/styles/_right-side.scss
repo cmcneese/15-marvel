@@ -1,0 +1,71 @@
+.section_right {
+  &--titles {
+    color: $c-font-color;
+    border-bottom: 0.1rem solid $c-font-color;
+    font-family: bangers;
+    width: 100%;
+
+  }
+}
+
+.comic_collection {
+  &-button {
+    background: $c-primary;
+    color: #fff;
+    border-radius: 0.4rem;
+    padding: 0.5rem 0.8rem;
+    border: none;
+    margin-bottom: 1rem;
+    align-items: baseline;
+}
+}
+
+.comic_collection-images {
+  display: flex;
+  width: 8rem;
+  height: 9rem;
+  box-shadow: 0.2rem 0.2rem 0.4rem rgba(0, 0, 0, 0.4);
+  border-radius: 0.4rem;
+
+    }
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin: -1rem;
+
+  &__item {
+    flex-basis: calc(100% / 4 - 2rem);
+    flex-grow: 1;
+    margin: 1rem;
+
+    &--left {
+      flex-basis: calc(20% - 2rem);
+    }
+
+    &--right {
+      flex-basis: calc(80% - 2rem);
+    }
+  }
+}
+
+.characters_collection {
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+
+  &::before {
+    display: block;
+    padding-top: calc(100% * 3 / 4);
+    content: '';
+  }
+
+&-image {
+
+  box-shadow: 0.2rem 0.2rem 0.4rem rgba(0, 0, 0, 0.4);
+  border-radius: 0.4rem;
+  object-fit: cover;
+
+}
+}
